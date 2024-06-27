@@ -27,7 +27,6 @@ local CONF = {
             { centralMapping = { key = "cycle_type" } }
         },
         customData = {
-            { key = "CIP_CCIP_step",         centralMapping = { key = "CIP_CCIP_step" } },
             { key = "CIP_G_max_PV",          centralMapping = { key = "CIP_G_max_PV" } },
             { key = "CIP_T_min_PV",          centralMapping = { key = "CIP_T_min_PV" } },
             { key = "CIP_container_Id",      centralMapping = { key = "CIP_container_Id" } },

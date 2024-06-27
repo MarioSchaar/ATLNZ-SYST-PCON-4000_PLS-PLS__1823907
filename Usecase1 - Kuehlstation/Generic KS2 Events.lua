@@ -51,13 +51,6 @@ local CONF = {
             { key = "dStore_sec",               centralMapping = { key = "dStore_sec" } },
             { key = "tPrint",                   centralMapping = { key = "tPrint" } },
             { key = "print_by",                 centralMapping = { key = "print_by" } },
-            { key = "Tflow_4128-02TI242",       centralMapping = { key = "Tflow_4128-02TI242" } },
-            { key = "vRot_4111-p2SI282",        centralMapping = { key = "vRot_4111-p2SI282" } },
-            { key = "T_container_4111-p2TI241", centralMapping = { key = "T_container_4111-p2TI241" } },
-            { key = "sens_leak_4128-02LSH221",  centralMapping = { key = "sens_leak_4128-02LSH221" } },
-            { key = "step",                     centralMapping = { key = "step" } },
-            { key = "cool_active",              centralMapping = { key = "cool_active" } },
-            { key = "stir_active",              centralMapping = { key = "stir_active" } },
             { key = "cycle_type",             centralMapping = { key = "cycle_type" } }
 
         },

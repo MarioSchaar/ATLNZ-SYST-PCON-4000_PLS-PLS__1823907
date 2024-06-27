@@ -41,9 +41,6 @@ local CONF = {
             { key = "dStir",                    centralMapping = { key = "dStir" } },
             { key = "tPrint",                   centralMapping = { key = "tPrint" } },
             { key = "print_by",                 centralMapping = { key = "print_by" } },
-            { key = "vRot_4111-p4SI282",        centralMapping = { key = "vRot_4111-p4SI282" } },
-            { key = "T_container_4111-p4TI241", centralMapping = { key = "T_container_4111-p4TI241" } },
-            { key = "step",                     centralMapping = { key = "step" } },
         },
         condition = true
     },
