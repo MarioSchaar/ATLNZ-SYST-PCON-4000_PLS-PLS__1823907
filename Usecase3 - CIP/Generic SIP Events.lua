@@ -39,9 +39,6 @@ local CONF = {
             { key = "SIP_T_min_coldSpot_SP", centralMapping = { key = "SIP_T_min_coldSpot_SP" } },
             { key = "SIP_tPrint",            centralMapping = { key = "SIP_tPrint" } },
             { key = "SIP_print_by",          centralMapping = { key = "SIP_print_by" } },
-            { key = "SIP_on_off",            centralMapping = { key = "SIP_on_off" } },
-            { key = "SIP_T_4201TI02_PV",     centralMapping = { key = "SIP_T_4201TI02_PV" } },
-            { key = "SIP_step",              centralMapping = { key = "SIP_step" } },
         },
         condition = true
     },
