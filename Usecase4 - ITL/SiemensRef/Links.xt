@@ -1,0 +1,12 @@
+eine Beschreibung, wie das PCS 7 Meldesystem auf OPC UA A&C abgebildet wird, findet ihr hier: https://support.industry.siemens.com/cs/de/de/view/109805405/81463941259
+Die Meldeklasse (Alarm, Warnung, etc.) wird mit CLASSID bzw. CLASSNAME als OPC UA Event Property abgebildet.
+Die Meldeart (Alarm oben, Alarm unten, etc.) wird mit TYPEID bzw. TYPENAME als OPC UA Event Property abgebildet.
+Die ID ist jeweils 1:1 die ID aus dem WinCC AlarmLogging, so könnt ihr die „Kategorisierung“ machen.
+	Siehe: https://support.industry.siemens.com/cs/de/de/view/109805405/81463965451
+
+Meldezustand und Quittierstatus werden über „ActiveState/Id“ sowie „AckedState/Id“ abgebildet.
+	Siehe: https://support.industry.siemens.com/cs/de/de/view/109805405/81464019979
+
+Die vier unterhalb genannten Zustände könnt/müsst ihr aus der Kombination der beiden genannten Properties ableiten.
+
+Mit „UA Expert“ (OPC UA Testclient von Unified Automation) sieht das dann wie folgt aus:

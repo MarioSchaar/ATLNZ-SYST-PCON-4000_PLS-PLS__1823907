@@ -1,0 +1,186 @@
+{
+    "System.SafKey": "",
+    "u_": {
+        "2041": {
+            "2051": {
+                "d_": 1
+            },
+            "2050": {
+                "d_": "Rührwerk läuft"
+            },
+            "2043": {
+                "d_": "ns=2;i=53"
+            },
+            "2042": {
+                "d_": "P\u0000L\u0000S\u00004\u00000\u00000\u00000\u0000:\u0000:\u0000R\u00002\u00001\u00006\u0000\\\u0000R\u00002\u00001\u00006\u0000/\u0000R\u00002\u00001\u00006\u0000S\u0000P\u0000/\u0000S\u0000P\u0000\u0000\u0000\u0000\u0000�\u0012�M�3�@�\u0012�M�3�@�\u0004�)"
+            },
+            "2045": {
+                "d_": "PLS4000::R216\\R216/R216SP/SP"
+            },
+            "WinCCEventType": {
+                "PRIORITY": {
+                    "d_": 0
+                },
+                "TEXT01": {
+                    "d_": "R216/R216SP/SP"
+                },
+                "MODIFYSTATE": {
+                    "d_": 65537
+                },
+                "COUNTER": {
+                    "d_": 0
+                },
+                "TYPENAME": {
+                    "d_": "Status AS"
+                },
+                "TEXT04": {
+                    "d_": "12345678"
+                },
+                "BIG_COUNTER": {
+                    "d_": 0
+                },
+                "AGNR": {
+                    "d_": 0
+                },
+                "PROCESSVALUE02": {
+                    "d_": 0.0
+                },
+                "OS_HIDDEN": {
+                    "d_": false
+                },
+                "FORECOLOR": {
+                    "d_": 16777215
+                },
+                "CPUNR": {
+                    "d_": 0
+                },
+                "FLASHCOLOR": {
+                    "d_": 8421376
+                },
+                "QUITSTATETEXT": {
+                    "d_": ""
+                },
+                "PROCESSVALUE03": {
+                    "d_": 1.0
+                },
+                "QUITCOUNT": {
+                    "d_": 36
+                },
+                "BACKCOLOR": {
+                    "d_": 8421376
+                },
+                "STATETEXT": {
+                    "d_": "K"
+                },
+                "OS_EVENTID": {
+                    "d_": 696255656
+                },
+                "ALARMCOUNT": {
+                    "d_": 42
+                },
+                "TEXT02": {
+                    "d_": "R216"
+                },
+                "CLASSID": {
+                    "d_": 16
+                },
+                "HIDDEN_COUNT": {
+                    "d_": 32
+                },
+                "TYPEID": {
+                    "d_": 253
+                },
+                "PARAMETER": {
+                    "d_": 1164
+                },
+                "CLASSNAME": {
+                    "d_": "Status-Meldung"
+                },
+                "PROCESSVALUE04": {
+                    "d_": 50.0
+                },
+                "LOCKCOUNT": {
+                    "d_": 0
+                },
+                "LOOPINALARM": {
+                    "d_": 696255656
+                },
+                "FLAGS": {
+                    "d_": 12714289
+                },
+                "DURATION": {
+                    "d_": 0
+                },
+                "PROCESSVALUE01": {
+                    "d_": "12345678"
+                },
+                "TEXT03": {
+                    "d_": "Rührwerk läuft"
+                }
+            },
+            "2782": {
+                "3874": {
+                    "d_": false
+                },
+                "9026": {
+                    "d_": ""
+                },
+                "2881": {
+                    "9093": {
+                        "9094": {
+                            "d_": true
+                        },
+                        "d_": "[en]Acknowledged"
+                    },
+                    "2915": {
+                        "9215": {
+                            "d_": false
+                        },
+                        "9160": {
+                            "9161": {
+                                "d_": true
+                            }
+                        }
+                    }
+                },
+                "9011": {
+                    "9012": {
+                        "d_": true
+                    },
+                    "d_": true
+                },
+                "9010": {
+                    "d_": ""
+                },
+                "9020": {
+                    "d_": 0
+                }
+            },
+            "2047": {
+                "d_": 1719385119299
+            },
+            "2046": {
+                "d_": 1719385119281
+            }
+        }
+    },
+    "Common.Timestamp": 1719385119281,
+    "System.Connector.EventID": 876,
+    "System.SourceFlags": 131074,
+    "System.Timestamp": 1719385119281,
+    "System.ServerRoutes": "",
+    "System.Datasource.ID": 281839491940352,
+    "Common.Message": "Rührwerk läuft",
+    "System.StateFlags": 4096,
+    "System.CoreEventID": 12666502801465089,
+    "System.Stage.StageErrors": 0,
+    "System.Stage.Commands": 0,
+    "System.OriginEventStreamOID": 282107623833600,
+    "System.EventStreamOID": 282107623833600,
+    "System.CoreTargetObject": 282107623833600,
+    "System.SystemFlags": 65538,
+    "System.Replicas": 0,
+    "System.Stage.StageFlags": 311,
+    "System.CoreReception": 0,
+    "System.StreamCounter": 876
+}
