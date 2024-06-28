@@ -39,7 +39,7 @@ local CONF = {
             { key = "recipe_ver",               centralMapping = { key = "recipe_ver" } },
             { key = "batch_Id",                 centralMapping = { key = "batch_Id" } },
             { key = "matr_Id",                  centralMapping = { key = "matr_Id" } },
-                { key = "cycle_type",               centralMapping = { key = "cycle_type" } }
+                { key = "cycle_type",               centralMapping = { key = "cycle_type" } },
 
             { key = "cycle_result",             centralMapping = { key = "cycle_result" } },
             { key = "t_start",                  centralMapping = { key = "t_start" } },
