@@ -13,7 +13,7 @@ local O = require("esi-objects")
 
 local CONF = {
     customTableName = "StaticValues",
-    Tags = { ReadyToTransfer = "Print_Report" },
+    Tags = { ReadyToTransfer = "trigg_report" },
     ErrorCodes = { Success = 200, GeneralError = 500, DataProcessingError = 501 },
     WaitTime = 2000,
     Event =
@@ -35,16 +35,19 @@ local CONF = {
 
             { key = "cycle_Id",                 centralMapping = { key = "cycle_Id" } },
             { key = "container_Id",             centralMapping = { key = "container_Id" } },
-             { key = "filtrContainer_Id",        centralMapping = { key = "filtrContainer_Id" } },
+            { key = "filtrContainer_Id",        centralMapping = { key = "filtrContainer_Id" } },
             { key = "recipe_name",              centralMapping = { key = "recipe_name" } },
             { key = "recipe_ver",               centralMapping = { key = "recipe_ver" } },
             { key = "batch_Id",                 centralMapping = { key = "batch_Id" } },
             { key = "matr_Id",                  centralMapping = { key = "matr_Id" } },
+
             { key = "cycle_result",             centralMapping = { key = "cycle_result" } },
             { key = "t_start",                  centralMapping = { key = "t_start" } },
             { key = "t_end",                    centralMapping = { key = "t_end" } },
+
             { key = "vRotStir_SP",              centralMapping = { key = "vRotStir_SP" } },
             { key = "dStir",                    centralMapping = { key = "dStir" } },
+            
             { key = "tPrint",                   centralMapping = { key = "tPrint" } },
             { key = "print_by",                 centralMapping = { key = "print_by" } },
         },
@@ -79,8 +82,8 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 			"StaticValues",
 		},
 		["CustomOptions.CustomProperties.CustomPropertyValue"] = {
-			"/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/1823907_PLS4000_ATS00753/PROD/GenTemplate Companions/Generic R215-Mapping.TableData",
-			"PROD",
+			"/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/CentralMappingConnector.TableData",
+			"1825486",
 		},
 		["CustomOptions.CustomProperties.CustomPropertyName"] = {
 			"mapping_table",
