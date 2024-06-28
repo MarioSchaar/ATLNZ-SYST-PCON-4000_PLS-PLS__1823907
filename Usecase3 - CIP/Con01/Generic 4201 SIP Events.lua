@@ -4,8 +4,8 @@ syslib.mass({
 	{
 		class = syslib.model.classes.ActionItem,
 		operation = syslib.model.codes.MassOp.UPSERT,
-		path =  base .. "/Generic SIP Events",
-		["ObjectName"] = "Generic SIP Events",
+		path =  base .. "/Generic 4201 SIP Events",
+		["ObjectName"] = "Generic 4201 SIP Events",
 		["AdvancedLuaScript"] = [=[package.loaded["tak-dl-getevent-gentemplate"] = nil
 local EVENTS = require("tak-dl-getevent-gentemplate")
 local O = require("esi-objects")
@@ -13,7 +13,7 @@ local O = require("esi-objects")
 
 local CONF = {
     customTableName = "StaticValues",
-    Tags = { ReadyToTransfer = "Print_Report" },
+    Tags = { ReadyToTransfer = "SIP_trigg_report" },
     ErrorCodes = { Success = 200, GeneralError = 500, DataProcessingError = 501 },
     WaitTime = 2000,
     Event =
@@ -28,22 +28,27 @@ local CONF = {
             { func = function (self, data) return 
                 "ContainerId " .. self:_getDataByType({ centralMapping = { key = "SIP_container_Id" } })
             end },
-            { centralMapping = { key = "cycle_type" } }
+            { func = function (self, data) return 
+                "SIP"
+            end }
         },
         customData = {
             { key = "SIP_cycle_Id",          centralMapping = { key = "SIP_cycle_Id" } },
             { key = "SIP_container_Id",      centralMapping = { key = "SIP_container_Id" } },
             { key = "SIP_recipe_ver",        centralMapping = { key = "SIP_recipe_ver" } },
             { key = "SIP_recipe_name",       centralMapping = { key = "SIP_recipe_name" } },
+
             { key = "SIP_cycle_result",      centralMapping = { key = "SIP_cycle_result" } },
             { key = "SIP_t_start",           centralMapping = { key = "SIP_t_start" } },
             { key = "SIP_t_end",             centralMapping = { key = "SIP_t_end" } },
-            { key = "SIP_t_Ti02_lolo",       centralMapping = { key = "SIP_t_Ti02_lolo" } },
+
             { key = "SIP_tClean",            centralMapping = { key = "SIP_tClean" } },
+
             { key = "SIP_T_min_coldSpot_PV", centralMapping = { key = "SIP_T_min_coldSpot_PV" } },
-             { key = "SIP_T_min_coldSpot_SP", centralMapping = { key = "SIP_T_min_coldSpot_SP" } },
+                { key = "SIP_T_min_coldSpot_SP", centralMapping = { key = "SIP_T_min_coldSpot_SP" } },
+                
             { key = "SIP_tPrint",            centralMapping = { key = "SIP_tPrint" } },
-            { key = "SIP_print_by",          centralMapping = { key = "SIP_print_by" } },
+            { key = "print_by",          centralMapping = { key = "print_by" } },
         },
         condition = true
     },
@@ -65,7 +70,7 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 				],
 				"Value": [
                     "1818971",
-                    "PLS4000 CIPSIP"
+                    "PLS4000 4201"
 				]
 			}
 			}
@@ -76,8 +81,8 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 			"StaticValues",
 		},
 		["CustomOptions.CustomProperties.CustomPropertyValue"] = {
-			"/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/1823907_PLS4000_ATS00753/PROD/GenTemplate Companions/Generic SIP-Mapping.TableData",
-			"PROD",
+			"/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/CentralMappingConnector.TableData",
+			"1818971",
 		},
 		["CustomOptions.CustomProperties.CustomPropertyName"] = {
 			"mapping_table",
@@ -85,7 +90,7 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 		},
 		references = {
 			{
-                path = "/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/1823907_PLS4000_ATS00753/PROD/LIQS/4201__CIPSIP_1/CIPSIP_1__1818971/trigg_report",
+                path = "/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/1823907_PLS4000_ATS00753/PROD/LIQS/4201__CIPSIP_1/CIPSIP_1__1818971/SIP_trigg_report",
                 name = '_trigger_io_',
                 type = 'OBJECT_LINK'
             }

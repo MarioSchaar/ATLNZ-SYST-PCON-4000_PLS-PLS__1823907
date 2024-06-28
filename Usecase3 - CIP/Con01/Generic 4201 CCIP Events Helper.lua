@@ -4,8 +4,8 @@ syslib.mass({
 	{
 		class = syslib.model.classes.ActionItem,
 		operation = syslib.model.codes.MassOp.UPSERT,
-		path =  base .. "/Generic CCIP Events Helper",
-		["ObjectName"] = "Generic CCIP Events Helper",
+		path =  base .. "/Generic 4201 CCIP Events Helper",
+		["ObjectName"] = "Generic 4201 CCIP Events Helper",
 		["AdvancedLuaScript"] = [=[local TOOL = require("esi-tool")
 local O = require("esi-objects")
 local V = require("esi-variables")
