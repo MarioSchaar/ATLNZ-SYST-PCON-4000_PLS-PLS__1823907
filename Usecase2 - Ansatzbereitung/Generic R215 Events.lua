@@ -15,21 +15,27 @@ local CONF = {
     customTableName = "StaticValues",
     Tags = { ReadyToTransfer = "Print_Report" },
     ErrorCodes = { Success = 200, GeneralError = 500, DataProcessingError = 501 },
-    WaitTime = 100,
+    WaitTime = 2000,
     Event =
     {
         key = "event",
         messageData = {
-            { data = { key = "EventType" } },
             { data = { key = "Equipment" } },
-            { centralMapping = { key = "cycle_Id" } },
-            { centralMapping = { key = "container_Id" } }
+            { data = { key = "EquipmentReadableName" } },
+            { func = function (self, data) return 
+                "CycleId " .. self:_getDataByType({ centralMapping = { key = "cycle_Id" } })
+            end },
+            { func = function (self, data) return 
+                "ContainerId " .. self:_getDataByType({ centralMapping = { key = "container_Id" } })
+            end },
+            { centralMapping = { key = "cycle_type" } }
         },
-        customData = {
+       customData = {
             { key = "station_name",             centralMapping = { key = "station_name" } },
+
             { key = "cycle_Id",                 centralMapping = { key = "cycle_Id" } },
             { key = "container_Id",             centralMapping = { key = "container_Id" } },
-            { key = "filtrContainer_Id",        centralMapping = { key = "filtrContainer_Id" } },
+             { key = "filtrContainer_Id",        centralMapping = { key = "filtrContainer_Id" } },
             { key = "recipe_name",              centralMapping = { key = "recipe_name" } },
             { key = "recipe_ver",               centralMapping = { key = "recipe_ver" } },
             { key = "batch_Id",                 centralMapping = { key = "batch_Id" } },
@@ -57,12 +63,12 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 			{
 			"data": {
 				"Key": [
-				"Equipment",
-				"EventType"
+                    "Equipment",
+                    "EquipmentReadableName"
 				],
 				"Value": [
-				"PLS4000",
-				"R215"
+                    "1825486",
+                    "PLS4000 R215"
 				]
 			}
 			}

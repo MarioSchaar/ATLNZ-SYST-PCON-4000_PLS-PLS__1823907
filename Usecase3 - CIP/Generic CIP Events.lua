@@ -15,15 +15,19 @@ local CONF = {
     customTableName = "StaticValues",
     Tags = { ReadyToTransfer = "Print_Report" },
     ErrorCodes = { Success = 200, GeneralError = 500, DataProcessingError = 501 },
-    WaitTime = 100,
+    WaitTime = 2000,
     Event =
     {
         key = "event",
         messageData = {
-            { data = { key = "EventType" } },
             { data = { key = "Equipment" } },
-            { centralMapping = { key = "CIP_cycle_Id" } },
-            { centralMapping = { key = "CIP_container_Id" } },
+            { data = { key = "EquipmentReadableName" } },
+            { func = function (self, data) return 
+                "CycleId " .. self:_getDataByType({ centralMapping = { key = "CIP_cycle_Id" } })
+            end },
+            { func = function (self, data) return 
+                "ContainerId " .. self:_getDataByType({ centralMapping = { key = "CIP_container_Id" } })
+            end },
             { centralMapping = { key = "cycle_type" } }
         },
         customData = {
@@ -59,12 +63,12 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 			{
 			"data": {
 				"Key": [
-				"Equipment",
-				"EventType"
+                    "Equipment",
+                    "EquipmentReadableName"
 				],
 				"Value": [
-				"PLS4000",
-				"CIP"
+                    "1818971",
+                    "PLS4000 CIPSIP"
 				]
 			}
 			}
@@ -84,7 +88,7 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 		},
 		references = {
 			{
-                path = "/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/1823907_PLS4000_ATS00753/PROD/LIQS/4201__CIPSIP_1/CIPSIP_1__1818971/CIP_print_report",
+                path = "/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/1823907_PLS4000_ATS00753/PROD/LIQS/4201__CIPSIP_1/CIPSIP_1__1818971/trigg_report",
                 name = '_trigger_io_',
                 type = 'OBJECT_LINK'
             }

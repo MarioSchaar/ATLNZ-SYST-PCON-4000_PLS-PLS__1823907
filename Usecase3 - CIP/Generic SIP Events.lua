@@ -15,15 +15,20 @@ local CONF = {
     customTableName = "StaticValues",
     Tags = { ReadyToTransfer = "Print_Report" },
     ErrorCodes = { Success = 200, GeneralError = 500, DataProcessingError = 501 },
-    WaitTime = 100,
+    WaitTime = 2000,
     Event =
     {
         key = "event",
         messageData = {
-            { data = { key = "EventType" } },
             { data = { key = "Equipment" } },
-            { centralMapping = { key = "SIP_cycle_Id" } },
-            { centralMapping = { key = "SIP_container_Id" } }
+            { data = { key = "EquipmentReadableName" } },
+            { func = function (self, data) return 
+                "CycleId " .. self:_getDataByType({ centralMapping = { key = "SIP_cycle_Id" } })
+            end },
+            { func = function (self, data) return 
+                "ContainerId " .. self:_getDataByType({ centralMapping = { key = "SIP_container_Id" } })
+            end },
+            { centralMapping = { key = "cycle_type" } }
         },
         customData = {
             { key = "SIP_cycle_Id",          centralMapping = { key = "SIP_cycle_Id" } },
@@ -36,7 +41,7 @@ local CONF = {
             { key = "SIP_t_Ti02_lolo",       centralMapping = { key = "SIP_t_Ti02_lolo" } },
             { key = "SIP_tClean",            centralMapping = { key = "SIP_tClean" } },
             { key = "SIP_T_min_coldSpot_PV", centralMapping = { key = "SIP_T_min_coldSpot_PV" } },
-            { key = "SIP_T_min_coldSpot_SP", centralMapping = { key = "SIP_T_min_coldSpot_SP" } },
+             { key = "SIP_T_min_coldSpot_SP", centralMapping = { key = "SIP_T_min_coldSpot_SP" } },
             { key = "SIP_tPrint",            centralMapping = { key = "SIP_tPrint" } },
             { key = "SIP_print_by",          centralMapping = { key = "SIP_print_by" } },
         },
@@ -55,12 +60,12 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 			{
 			"data": {
 				"Key": [
-				"Equipment",
-				"EventType"
+                    "Equipment",
+                    "EquipmentReadableName"
 				],
 				"Value": [
-				"PLS4000",
-				"SIP"
+                    "1818971",
+                    "PLS4000 CIPSIP"
 				]
 			}
 			}
