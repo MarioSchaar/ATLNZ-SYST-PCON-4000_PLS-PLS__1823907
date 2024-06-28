@@ -15,44 +15,52 @@ local CONF = {
     customTableName = "StaticValues",
     Tags = { ReadyToTransfer = "Print_Report" },
     ErrorCodes = { Success = 200, GeneralError = 500, DataProcessingError = 501 },
-    WaitTime = 100,
+    WaitTime = 2000,
     Event =
     {
         key = "event",
         messageData = {
-            { data = { key = "EventType" } },
             { data = { key = "Equipment" } },
-            { centralMapping = { key = "cycle_Id" } },
-            { centralMapping = { key = "container_Id" } },
+            { data = { key = "EquipmentReadableName" } },
+            { func = function (self, data) return 
+                "CycleId " .. self:_getDataByType({ centralMapping = { key = "cycle_Id" } })
+            end },
+            { func = function (self, data) return 
+                "ContainerId " .. self:_getDataByType({ centralMapping = { key = "container_Id" } })
+            end },
             { centralMapping = { key = "cycle_type" } }
         },
         customData = {
             { key = "station_name",             centralMapping = { key = "station_name" } },
+
             { key = "cycle_Id",                 centralMapping = { key = "cycle_Id" } },
             { key = "container_Id",             centralMapping = { key = "container_Id" } },
             { key = "recipe_name",              centralMapping = { key = "recipe_name" } },
             { key = "recipe_ver",               centralMapping = { key = "recipe_ver" } },
             { key = "batch_Id",                 centralMapping = { key = "batch_Id" } },
             { key = "matr_Id",                  centralMapping = { key = "matr_Id" } },
+                { key = "cycle_type",               centralMapping = { key = "cycle_type" } }
+
             { key = "cycle_result",             centralMapping = { key = "cycle_result" } },
             { key = "t_start",                  centralMapping = { key = "t_start" } },
             { key = "t_end",                    centralMapping = { key = "t_end" } },
+            
             { key = "vRotStir_SP",              centralMapping = { key = "vRotStir_SP" } },
             { key = "dStir",                    centralMapping = { key = "dStir" } },
-            { key = "Tcool_SP",                 centralMapping = { key = "Tcool_SP" } },
-            { key = "Tcool_tolerance_lolo",     centralMapping = { key = "Tcool_tolerance_lolo" } },
-            { key = "Tcool_tolerance_hihi",     centralMapping = { key = "Tcool_tolerance_hihi" } },
+                { key = "Tcool_SP",                 centralMapping = { key = "Tcool_SP" } },
+                { key = "Tcool_tolerance_lolo",     centralMapping = { key = "Tcool_tolerance_lolo" } },
+                { key = "Tcool_tolerance_hihi",     centralMapping = { key = "Tcool_tolerance_hihi" } },
             { key = "Tequil_SP",                centralMapping = { key = "Tequil_SP" } },
             { key = "Tequil_tolerance_lolo",    centralMapping = { key = "Tequil_tolerance_lolo" } },
             { key = "Tequil_tolerance_hihi",    centralMapping = { key = "Tequil_tolerance_hihi" } },
-            { key = "dStore_day",               centralMapping = { key = "dStore_day" } },
-            { key = "dStore_hour",              centralMapping = { key = "dStore_hour" } },
-            { key = "dStore_min",               centralMapping = { key = "dStore_min" } },
-            { key = "dStore_sec",               centralMapping = { key = "dStore_sec" } },
+                { key = "dStore_day",               centralMapping = { key = "dStore_day" } },
+                { key = "dStore_hour",              centralMapping = { key = "dStore_hour" } },
+                { key = "dStore_min",               centralMapping = { key = "dStore_min" } },
+                { key = "dStore_sec",               centralMapping = { key = "dStore_sec" } },
+                
             { key = "tPrint",                   centralMapping = { key = "tPrint" } },
             { key = "printy_by",                centralMapping = { key = "printy_by" } },
-            { key = "cycle_type",             centralMapping = { key = "cycle_type" } }
-
+ 
         },
         condition = true
     },
@@ -69,12 +77,12 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 			{
 			"data": {
 				"Key": [
-				"Equipment",
-				"EventType"
+                    "Equipment",
+                    "EquipmentReadableName"
 				],
 				"Value": [
-				"PLS4000",
-				"KS1"
+                    "1823584",
+                    "PLS4000 KS1"
 				]
 			}
 			}
