@@ -62,7 +62,8 @@ local CONF = {
             { key = "printy_by",                centralMapping = { key = "printy_by" } },
  
         },
-        condition = true
+        condition = true,
+        useDatasetIdentifier = false
     },
 }
 
