@@ -13,7 +13,7 @@ local O = require("esi-objects")
 
 local CONF = {
     customTableName = "StaticValues",
-    Tags = { ReadyToTransfer = "Print_Report" },
+    Tags = { ReadyToTransfer = "trigg_report" },
     ErrorCodes = { Success = 200, GeneralError = 500, DataProcessingError = 501 },
     WaitTime = 2000,
     Event =
@@ -59,7 +59,7 @@ local CONF = {
                 { key = "dStore_sec",               centralMapping = { key = "dStore_sec" } },
                 
             { key = "tPrint",                   centralMapping = { key = "tPrint" } },
-            { key = "printy_by",                centralMapping = { key = "printy_by" } },
+            { key = "print_by",                centralMapping = { key = "print_by" } },
  
         },
         condition = true,
@@ -93,8 +93,8 @@ return EVENTS:RUN(CONF, mapping_table, equipment)]=],
 			"StaticValues",
 		},
 		["CustomOptions.CustomProperties.CustomPropertyValue"] = {
-			"/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/1823907_PLS4000_ATS00753/PROD/GenTemplate Companions/Generic KS2-Mapping.TableData",
-			"PROD",
+			"/System/Core/ATLNZ-Relay/ATLNZ/ATLNZ-V305-Con01/CentralMappingConnector.TableData",
+			"1823585",
 		},
 		["CustomOptions.CustomProperties.CustomPropertyName"] = {
 			"mapping_table",
